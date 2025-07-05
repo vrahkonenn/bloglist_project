@@ -4,8 +4,10 @@ const config = require('./utils/config')
 const blogsRouter = require('./controllers/blogs')
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
+const cors = require('cors')
 
 const app = express()
+app.use(cors())
 
 logger.info('connecting to', config.MONGODB_URI)
 
